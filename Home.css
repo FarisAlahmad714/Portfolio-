@@ -153,12 +153,12 @@ body {
 #portfolio-box {
   border-width: thin medium thick;
   border: 5px solid whitesmoke;
-  background-color: gainsboro
+  /* background-color: gainsboro */
 }
 
-/* .portfolio-title{
+.portfolio-title{
   background-color: gainsboro
-} */
+} 
 
 /* 
 #screenshot {
