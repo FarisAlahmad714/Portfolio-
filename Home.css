@@ -77,9 +77,9 @@ button {
   margin-right: 20px;
 }
 
-li {
+/* li {
   list-style-type: none;
-}
+} */
 
 /* Experience resume */
 
@@ -105,10 +105,10 @@ body {
   padding: 32px;
 }
 
-.row {
-  display: flex;
-  flex-wrap: flex;
-}
+row {
+  margin: 0;
+  padding: 0;
+} 
 
 /* Create four equal columns that sits next to each other */
 
