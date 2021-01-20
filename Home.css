@@ -58,6 +58,10 @@ tr {
   vertical-align: inherit;
   border-color: inherit;
 }
+/* 
+row{
+padding: au;
+} */
 
 /* Page styles */
 
@@ -102,8 +106,8 @@ body {
 }
 
 .row {
-
-  width: 100%;
+  display: flex;
+  flex-wrap: flex;
 }
 
 /* Create four equal columns that sits next to each other */
@@ -113,6 +117,7 @@ body {
   /* IE10 */
   flex: 25%;
   width: 25%;
+  margin: auto;
   
 }
 .devicon-pyt{
@@ -124,7 +129,7 @@ body {
 
 /* Responsive design */
 
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 1000px) {
   #left-section {
     position: fixed;
     width: 40%;
@@ -135,7 +140,7 @@ body {
     text-align: center;
     margin-top: 50px;
   }
-  @media screen and (min-width: 950px) {
+  @media screen and (min-width: 1000px) {
     #right-section {
       margin: 0 auto 1.5em;
       width: 60%;
@@ -157,9 +162,15 @@ body {
 }
 
 .portfolio-title{
-  background-color: gainsboro
+  padding: 2%
 } 
 
+iframe{
+  display: block;
+
+  margin: 0 auto;
+  background-color: rgb(243, 243, 243);
+}
 /* 
 #screenshot {
   width: 20%;
