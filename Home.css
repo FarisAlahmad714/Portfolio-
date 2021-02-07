@@ -38,6 +38,9 @@ div {
   animation-fill-mode: forwards; */
 }
 
+#resumebutton{
+  background-color: gold;
+}
 #right-section {
   float: right;
   width: 100%;
@@ -64,9 +67,11 @@ padding: au;
 } */
 
 /* Page styles */
-
-p, ul, li {
-  font-family: "Times New Roman", Times, serif;
+h3{
+  font-family: monospace;
+}
+p, ul, li{
+  font-family: 'Roboto', sans-serif;
 }
 
 #ul {
@@ -97,7 +102,7 @@ button {
 
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header {
