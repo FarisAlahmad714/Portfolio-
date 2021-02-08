@@ -30,6 +30,13 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
 
       gtag('config', 'G-2ETPRPX7LH');
     </script>
+
+    <!-- SMOOTHSCROLL -->
+    <script src="smooth-scroll.js"></script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
+    
   </head>
   <body>
     <style> 
@@ -39,10 +46,10 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
         animation: mymove 5s ;
       }
       
-      @keyframes mymove {
-        from {top: 0px;}
+      /* @keyframes mymove {
+        from {top: 50px;}
         to {bottom: 200px;}
-      }
+      } */
       </style>
     <div class="container">
       <div id="left-section">
@@ -70,7 +77,7 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
     </div>
     <div id="right-section">
       
-      <div class="z-depth-1" id="about-me" >
+      <div class="z-depth-3" id="about-me" >
           <h3>About Me</h3>
           <p class="font-weight-light">Software Engineer student specializing in web app development and machine learning,immersed with Python,JavaScript,Swift & C#!<br>
           Experienced Sales Associate with a demonstrated history of working in the automotive industry. Skilled in Research,Management,Customer Service,Leadership &Public Speaking.<br>
@@ -83,7 +90,7 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
             </p>
           </div>
       <!-- ADD SASS / FLASK -->
-      <div class="z-depth-2" id="skills">
+      <div class="z-depth-3" id="skills">
           <h3>Skills & Interests </h3>
           <div class="row" style="
             margin: 0;
