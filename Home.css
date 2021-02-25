@@ -45,6 +45,10 @@ div {
   float: right;
   width: 100%;
 }
+.boxtitles{
+  text-align: center;
+
+}
 
 h2 {
   font-size: 3.2rem;
