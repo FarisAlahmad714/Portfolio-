@@ -21,6 +21,7 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" >
     </script>
+
     <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ETPRPX7LH"></script>
     <script>
@@ -41,14 +42,14 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
   <body>
     
     <div class="container">
-      <div id="left-section">
+      <div id="left-section" data-tilt>
         <div class="col s12 m8 offset-m2 l6 offset-l3">
           <div class="card-panel grey lighten-5 z-depth-1">
             <div class="row valign-wrapper">
               <div class="col s2">
                 <img src="media/me.png" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
               </div>
-              <div class="col s10">
+              <div class="col s10" >
                 <span class="black-text">
                   <h4>Faris Alahmad</h4>
                   <div class="title" style="font-family:monospace;">Software Engineer & Salesman</div>
@@ -69,7 +70,7 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
      
           <hr>
       <!-- ADD SASS / FLASK -->
-      <div class="z-depth-3" id="skills">
+      <div class="z-depth-3" id="skills" data-tilt>
           <h3 class ="boxtitles">Skills & Interests </h3>
           <div class="row" style="
             margin: 0;
@@ -222,7 +223,8 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
         
         
 
-          <div class="z-depth-3" id="about-me" >
+        
+           <div class="z-depth-3" id="about-me" data-tilt>
             <h3 class ="boxtitles">About Me</h3>
             <p class ="boxtitles">Software Engineer student specializing in web app development and machine learning,immersed with Python,JavaScript,Swift & C#
             Experienced Sales Associate with a demonstrated history of working in the automotive industry. Skilled in Research,Management,Customer Service,Leadership &Public Speaking.<br>
@@ -233,12 +235,48 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
               Click <a  class="waves-effect waves-teal btn-flat"  id='resumebutton' href="FarisAlahmadResume.pdf" target="_blank" download="FarisAlahmad_Resume"> Here </a> to view my resume !
               </p>
             </div>
-      <div class="z-depth-5" id="resume">
+    
+
+
+            
+      <div class="z-depth-5" id="resume" data-tilt>
           <h3 class ="boxtitles">Experiences</h3>
             <li><a href="https://www.codingdojo.com/">Coding Dojo </a>| Student Software Engineer (2020) </li>
             <li><a href="https://www.bmwbuenapark.com/">Bmw Of Buena Park</a> | Client Advisor(2019-2020)</li>
             <li> <a href="https://www.yelp.com/biz/almokhtar-hookah-lounge-anaheim">Almokhtar Hookah Lounge </a> | Manager of Operations (2015-2019)</li>
       </div>
-    </div> 
+    </div>
+
+
+    <!-- <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+  </div> -->
+  
+
+  <div class="loader">
+      <figure>
+      <img src="media/me.png" alt="loading" style="width:30%;display: block;
+      margin: 0 auto;text-align:center";>
+      <figcaption><h4  style="display: block;
+        margin: 0 auto;text-align:center";>Entering Faris Alahmad's Portfolio...</h4></figcaption>
+    </figure>
+  </div>
+  
+  <!-- <div class="loader">
+    <h4>Please Wait..</h4>
+    <img src="milliyarloader.gif" alt="loading"/>
+  </div> -->
+    <script>
+     
+     window.addEventListener("load",function(){
+       const loader = document.querySelector(".loader");
+       loader.className += " hidden"
+     })
+      // $(window).on("load",function(){
+      //   $(".loader-wrapper").fadeOut("slow");
+      // })
+    </script>
+    <script src="Effects.js"></script>
+    
   </body>
 </html>
