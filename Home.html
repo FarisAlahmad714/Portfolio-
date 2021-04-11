@@ -41,7 +41,9 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
     <script>
         var scroll = new SmoothScroll('a[href*="#"]');
     </script>
-
+    <!-- MAGNIFIER.JS -->
+    <script src="http://thecodeplayer.com/uploads/js/prefixfree.js" type="text/javascript"></script>
+    <script src="http://thecodeplayer.com/uploads/js/jquery-1.7.1.min.js" type="text/javascript"></script>
   </head>
   <body>
     
@@ -51,8 +53,11 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
           <div class="card-panel grey lighten-5 z-depth-1">
             <div class="row valign-wrapper">
               <div class="col s2">
+                <!-- <div class="magnify">
+                <div class="large"></div> -->
                 <img src="media/me.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-              </div>
+              <!-- </div> -->
+            </div>
               <div class="col s10" >
                 <span class="black-text">
                   <h4>Faris Alahmad</h4>
@@ -132,17 +137,20 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
         </div> 
         <hr>
 
-          
+        <!-- <div class="magnify">
+          <div class="large"></div>
+          <img  class="small" src="media/me.jpg" alt="">
+          </div> -->
 
           <div  class="z-depth-5" class="card-panel hoverable" > 
         <h3 class ="boxtitles">Portfolio & Personal Projects </h3>
 
         <!-- NEWCARDVIDEO -->
-        
+    
         <div class="z-depth-5">
         <div class="card">
           <div class="video-container" class="card-image waves-effect waves-block waves-light">
-            <iframe width="853" height="480" src="https://player.vimeo.com/video/503645472?autoplay=1&loop=1&autopause=0&muted=1"  frameborder="0" allowfullscreen></iframe>
+            <iframe width="853" height="480" src="https://player.vimeo.com/video/535548648?autoplay=1&loop=1&autopause=0&muted=1"  frameborder="0" allowfullscreen></iframe>
           </div>
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4"><a href="https://milliyar.com">Milliyar</a><i class="material-icons right">Click to view Technologies</i></span>
@@ -228,7 +236,7 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
                     <iframe width="853" height="480" src="https://player.vimeo.com/video/530549682?autoplay=1&loop=1&autopause=0&muted=1"  frameborder="0" allowfullscreen></iframe>
                   </div>
                   <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4"><a href="https://focused-wilson-7d150e.netlify.app/">Pharmastic Solutions</a><i class="material-icons right">Click to view Technologies</i></span>
+                    <span class="card-title activator grey-text text-darken-4"><a href="https://confident-haibt-bc1e3d.netlify.app//">Pharmastic Solutions</a><i class="material-icons right">Click to view Technologies</i></span>
                     <p>Pharmastic is a delivery business established by myself and two partners , specializing in pharmaceutical medical deliveries. This website was created as a landing page with infographics about the company as well as a platform to recieve messages through our serverless forms.</p>
                   </div>
                   <div class="card-reveal">
@@ -312,6 +320,76 @@ button beautify,rid in intrests like johns,fixed left section without disrupting
       // })
     </script>
     <script src="Effects.js"></script>
+    <!-- MAGNIFIER.JS -->
+<script>
+  $(document).ready(function(){
+
+var native_width = 0;
+var native_height = 0;
+
+//Now the mousemove function
+$(".magnify").mousemove(function(e){
+  //When the user hovers on the image, the script will first calculate
+  //the native dimensions if they don't exist. Only after the native dimensions
+  //are available, the script will show the zoomed version.
+  if(!native_width && !native_height)
+  {
+    //This will create a new image object with the same image as that in .small
+    //We cannot directly get the dimensions from .small because of the 
+    //width specified to 200px in the html. To get the actual dimensions we have
+    //created this image object.
+    var image_object = new Image();
+    image_object.src = $(".small").attr("src");
+  
+    //This code is wrapped in the .load function which is important.
+    //width and height of the object would return 0 if accessed before 
+    //the image gets loaded.
+    native_width = image_object.width;
+    native_height = image_object.height;
+  }
+  else
+  {
+    //x/y coordinates of the mouse
+    //This is the position of .magnify with respect to the document.
+    var magnify_offset = $(this).offset();
+    //We will deduct the positions of .magnify from the mouse positions with
+    //respect to the document to get the mouse positions with respect to the 
+    //container(.magnify)
+    var mx = e.pageX - magnify_offset.left;
+    var my = e.pageY - magnify_offset.top;
+  
+    //Finally the code to fade out the glass if the mouse is outside the container
+    if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0)
+    {
+      $(".large").fadeIn(100);
+    }
+    else
+    {
+      $(".large").fadeOut(100);
+    }
+    if($(".large").is(":visible"))
+    {
+      //The background position of .large will be changed according to the position
+      //of the mouse over the .small image. So we will get the ratio of the pixel
+      //under the mouse pointer with respect to the image and use that to position the 
+      //large image inside the magnifying glass
+      var rx = Math.round(mx/$(".small").width()*native_width - $(".large").width()/2)*-1;
+      var ry = Math.round(my/$(".small").height()*native_height - $(".large").height()/2)*-1;
+      var bgp = rx + "px " + ry + "px";
     
+      //Time to move the magnifying glass with the mouse
+      var px = mx - $(".large").width()/2;
+      var py = my - $(".large").height()/2;
+      //Now the glass moves with the mouse
+      //The logic is to deduct half of the glass's width and height from the 
+      //mouse coordinates to place it with its center at the mouse coordinates
+    
+      //If you hover on the image now, you should see the magnifying glass in action
+      $(".large").css({left: px, top: py, backgroundPosition: bgp});
+    }
+  }
+})
+})
+</script>
   </body>
 </html>
